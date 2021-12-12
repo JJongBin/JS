@@ -1,31 +1,23 @@
 function solution(new_id) {
-  var answer = "";
+  var answer = '';
   answer = new_id
     .toLowerCase()
-    .replace(/[^a-z0-9\-_.]/g, "")
-    .replace(/[.]+/g, ".")
-    .replace(/^[.]|[.]$/g, "");
+    .replace(/[^a-z0-9\-_.]/g, '')
+    .replace(/[.]+/g, '.')
+    .replace(/^[.]|[.]$/g, '');
 
-  answer = answer.length === 0 ? "a" : answer.slice(0, 15);
-  answer =
-    answer[answer.length - 1] === "."
-      ? answer.slice(0, answer.length - 1)
-      : answer;
+  answer = answer.length === 0 ? 'a' : answer.slice(0, 15);
+  answer = answer[answer.length - 1] === '.' ? answer.slice(0, answer.length - 1) : answer;
 
-  answer =
-    answer.length >= 3
-      ? answer
-      : answer[1] === undefined
-      ? answer + answer + answer
-      : answer + answer[1];
+  answer = answer.length >= 3 ? answer : answer[1] === undefined ? answer + answer + answer : answer + answer[1];
 
   return answer;
 }
-console.log(solution("...!@BaT#*..y.abcdefghijklm")); //"bat.y.abcdefghi"
-console.log(solution("z-+.^.")); //"z--"
-console.log(solution("=.=")); //"aaa"
-console.log(solution("123_.def")); //"123_.def"
-console.log(solution("abcdefghijklmn.p")); //	"abcdefghijklmn"
+console.log(solution('...!@BaT#*..y.abcdefghijklm')); //"bat.y.abcdefghi"
+console.log(solution('z-+.^.')); //"z--"
+console.log(solution('=.=')); //"aaa"
+console.log(solution('123_.def')); //"123_.def"
+console.log(solution('abcdefghijklmn.p')); //	"abcdefghijklmn"
 
 // 1단계 new_id의 모든 대문자를 대응되는 소문자로 치환합니다.
 // 2단계 new_id에서 알파벳 소문자, 숫자, 빼기(-), 밑줄(_), 마침표(.)를 제외한 모든 문자를 제거합니다.

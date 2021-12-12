@@ -1,7 +1,7 @@
-const toggleCase = (str) =>
+const toggleCase = str =>
   str
-    .split("")
-    .map((s) => (/[A-Z]/g.test(s) ? s.toLowerCase() : s.toUpperCase()))
-    .join("");
+    .split('')
+    .map(s => (/[A-Z]/g.test(s) ? s.toLowerCase() : s.toUpperCase()))
+    .join('');
 
-console.log(toggleCase("StuDY")); // => 'sTUdy'
+console.log(toggleCase('StuDY')); // => 'sTUdy'

@@ -1,3 +1,3 @@
-const countUpperCase = (str) => str.match(/[A-Z]/g).length;
+const countUpperCase = str => str.match(/[A-Z]/g).length;
 
-console.log(countUpperCase("KoreaTimeGood")); // => 3
+console.log(countUpperCase('KoreaTimeGood')); // => 3
